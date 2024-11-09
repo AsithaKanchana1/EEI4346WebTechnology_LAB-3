@@ -3,30 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LAB 3</title>
+    <title>EMP_DEPT Form</title>
 </head>
 <body>
     <h1>EMP_DEPT</h1>
-    <form action="">
-        <tr>
-            <td><label for="">EMP_DEPT</label></td>
-            <td><input type="text" id="emp_dep" name="emp_dep"></td>
-        </tr>
+
+    <!-- Submit EMP Details  Form -->
+    <form method="POST" action="db_con.php">
+        <div>
+            <label for="emp_dep">EMP_DEPT : </label>
+            <input type="text" id="emp_dep" name="emp_dep" required>
+        </div>
         <br>
+        <div>
+            <label for="dpt_type">DEPT_TYPE : </label>
+            <input type="text" id="dpt_type" name="dpt_type" required>
+        </div>
         <br>
-        <tr>
-            <td><label for="">DEPT_TYPE</label></td>
-            <td><input type="text" id="dpt_type" name="dpt_type"></td>
-        </tr>
+        <div>
+            <label for="emp_dpt_no">EMP_DEPT_NO : </label>
+            <input type="text" id="emp_dpt_no" name="emp_dpt_no" required>
+        </div>
         <br>
-        <br>
-        <tr>
-            <td><label for="">EMP_DEPT_NO</label></td>
-            <td><input type="text" id="emp_dpt_no" name="emp_dpt_no"></td>
-        </tr>
-        <br>
-        <br>
+        <input type="hidden" name="action" value="Add Record">
         <input type="submit" value="SUBMIT">
     </form>
+
+    <!-- Search EMP Details  Form -->
+    <form method="POST" action="db_con.php">
+        <h2>Search Employee</h2>
+        <label for="search_emp_dep">EMP_DEPT :</label>
+        <input type="text" id="search_emp_dep" name="search_emp_dep" required>
+        <br><br>
+        <input type="hidden" name="action" value="Search">
+        <input type="submit" value="SEARCH">
+    </form>
+
 </body>
 </html>
