@@ -31,18 +31,25 @@ if (isset($_POST['action'])) {
         $result = mysqli_query($con, $sql);
 
         if (mysqli_num_rows($result) > 0) {
-            echo "<h2>Record Found:</h2>";
+            echo "<h2>Your Serched Emp Details Found : </h2>";
             while ($row = mysqli_fetch_assoc($result)) {
                 echo "EMP_DEPT: " . $row['EMP_DEPT'] . "<br>";
                 echo "DEPT_TYPE: " . $row['DEPT_TYPE'] . "<br>";
                 echo "EMP_DEPT_NO: " . $row['EMP_DEPT_NO'] . "<br><br>";
             }
         } else {
-            echo "No record found with EMP_DEPT: " . $search_emp_dep;
+            echo "No record found with EMP_DEPT Sorry .....: " . $search_emp_dep;
         }
     }
 }
 
 // Close the connection
 mysqli_close($con);
+
+
+            // @Asitha Kanchana Palliyaguru 
+            // Open Univercity Of Srilanka
+            // 2024.11.09
+            // EEI4346 Web Technology
+            // LAB Test 03 
 ?>
