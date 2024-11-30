@@ -54,6 +54,24 @@ if (isset($_POST['action'])) {
         } else {
             echo "No record found with EMP_DEPT Sorry .....: " . $search_emp_dep; // if there is no results 
         }
+    }elseif ($_POST['action'] --- 'Delete'){
+
+        //input sanitization 
+        $emp_dept_no = mysqli_real_escape_string($con, $_POST['emp_dpt_no']);
+
+        //Delete Queary
+        $sql = "DELETE FROM emp_dept WHERE EMP_DEPT_NO = '$emp_dept_no'";
+
+        // check the result
+        if (mysqli_query($con, $sql)) {
+            if (mysqli_affected_rows($con) > 0 ) {
+                echo "Recode With EMP_DEPT_NO Deleted Sucsessfully ....";
+            } else{
+                echo "No Recode Found .....";
+            }
+        } else {
+            echo "Error Detecting Recode : " . mysqli_error($con);
+        }
     }
 }
 
